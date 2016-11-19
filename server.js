@@ -18,11 +18,11 @@ app.use(bodyParser.urlencoded({
 
 // make public a static dir
 app.use(express.static('public'));
-
+var PORT = process.env.PORT || 3000;
 
 // Database configuration with mongoose
 // mongoose.connect('mongodb://ds147777.mlab.com:47777/heroku_dkrsmh6j');
-mongoose.connect('mongodb://localhost/computerworld3');
+mongoose.connect('mongodb://visitors:visitors4050@ds157677.mlab.com:57677/heroku_r25tqc9p');
 var db = mongoose.connection;
 
 // show any mongoose errors
@@ -186,6 +186,6 @@ app.post('/articles/:id', function(req, res){
 
 
 // listen on port 3000
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log('App running on port 3000!');
 });
